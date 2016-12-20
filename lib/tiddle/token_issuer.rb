@@ -41,7 +41,6 @@ module Tiddle
     def purge_old_tokens(resource)
       resource.authentication_tokens
         .order(last_used_at: :desc)
-        .offset(maximum_tokens_per_user)
         .destroy_all
     end
 

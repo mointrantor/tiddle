@@ -14,6 +14,10 @@ module Tiddle
     TokenIssuer.build.expire_token(resource, request)
   end
 
+  def self.find_token(resource, token)
+    TokenIssuer.build.find_token(resource, token)
+  end
+
   def self.purge_old_tokens(resource)
     TokenIssuer.build.purge_old_tokens(resource)
   end
